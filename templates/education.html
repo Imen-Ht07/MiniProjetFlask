@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution of Education Levels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+    
+        h1 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    
+        .graph-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+    
+        .graph-container img,
+        .graph-container iframe {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+    
+    </style>
+    
+</head>
+<body>
+      <!-- Sidebar inclusion -->
+      {% include 'sidebar.html' %}
+    <h1>Distribution by Education Level</h1>
+    <div>
+        <img src="{{ graph_path }}" alt="Graphique répartition par niveau d'éducation" style="max-width:100%; height:auto;">
+    </div>
+</body>
+</html>

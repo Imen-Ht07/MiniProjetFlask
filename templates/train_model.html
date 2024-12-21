@@ -1,0 +1,98 @@
+{% extends "nav.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #333;
+        }
+        .training-container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .confusion-matrix {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+        .info-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e9ecef;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Model Training</h1>
+        <div class="training-container mt-4">
+            <div class="row">
+                <!-- Model Metrics -->
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h4>Model Metrics:</h4>
+                        <p class="fs-5">
+                            <strong>Accuracy:</strong> 
+                            {% if accuracy is not none %}
+                                {{ accuracy | round(3) }}
+                            {% else %}
+                                <em>No accuracy available</em>
+                            {% endif %}
+                        </p>
+                        <p class="fs-5">
+                            <strong>Precision:</strong> 
+                            {% if precision is not none %}
+                                {{ precision | round(3) }}
+                            {% else %}
+                                <em>No precision available</em>
+                            {% endif %}
+                        </p>
+                        <p class="fs-5">
+                            <strong>Recall:</strong> 
+                            {% if recall is not none %}
+                                {{ recall | round(3) }}
+                            {% else %}
+                                <em>No recall available</em>
+                            {% endif %}
+                        </p>
+                        <p class="fs-5">
+                            <strong>F1-Score:</strong> 
+                            {% if f1_score is not none %}
+                                {{ f1_score | round(3) }}
+                            {% else %}
+                                <em>No F1-score available</em>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Confusion Matrix -->
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h4>Confusion Matrix:</h4>
+                        <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix" class="confusion-matrix">
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

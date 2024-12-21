@@ -1,0 +1,122 @@
+{% extends "nav.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Prédiction</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">
+            Prediction of Adaptability Level</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="Age">Age:</label>
+                <select class="form-control" id="Age" name="Age" required>
+                    <option value="16-20">16-20</option>
+                    <option value="21-25">21-25</option>
+                    <option value="26-30">26-30</option>
+                    <option value="31-35">31-35</option>
+                    <option value="36+">36+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Gender">Gender:</label>
+                <select class="form-control" id="Gender" name="Gender" required>
+                    <option value="Boy">Boy</option>
+                    <option value="Girl">Girl</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Education Level">Education Level:</label>
+                <select class="form-control" id="Education Level" name="Education Level" required>
+                    <option value="School">School</option>
+                    <option value="College">College</option>
+                    <option value="University">University</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Institution Type">Institution Type:</label>
+                <select class="form-control" id="Institution Type" name="Institution Type" required>
+                    <option value="Government">Government</option>
+                    <option value="Non-Government">Non-Government</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="IT Student">IT Student:</label>
+                <select class="form-control" id="IT Student" name="IT Student" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Location">Location:</label>
+                <select class="form-control" id="Location" name="Location" required>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Load-shedding">Load-shedding Frequency:</label>
+                <select class="form-control" id="Load-shedding" name="Load-shedding" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Financial Condition">Financial Condition:</label>
+                <select class="form-control" id="Financial Condition" name="Financial Condition" required>
+                    <option value="Poor">Poor</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Rich">Rich</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Internet Type">Internet Type:</label>
+                <select class="form-control" id="Internet Type" name="Internet Type" required>
+                    <option value="Wifi">Wifi</option>
+                    <option value="Mobile Data">Mobile Data</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Network Type">Network Type:</label>
+                <select class="form-control" id="Network Type" name="Network Type" required>
+                    <option value="3G">3G</option>
+                    <option value="4G">4G</option>
+                    <option value="5G">5G</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Class Duration">Class Duration:</label>
+                <select class="form-control" id="Class Duration" name="Class Duration" required>
+                    <option value="1-3 hours">1-3 hours</option>
+                    <option value="4-6 hours">4-6 hours</option>
+                    <option value="7+ hours">7+ hours</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Self LMS">Self LMS:</label>
+                <select class="form-control" id="Self LMS" name="Self LMS" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Device">Device:</label>
+                <select class="form-control" id="Device" name="Device" required>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Laptop">Laptop</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Mon Application {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    {% include "nav.html" %}
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        {% block content %}
+        <header>
+            <h1>Project: Students' Adaptability Level in Online Education</h1>
+        </header>
+    
+        <section id="objective">
+            <h2>Project Objective</h2>
+            <p>
+                The project aims to predict the level of adaptability of students in an online education environment using 
+                machine learning techniques. The main objective is to understand how different factors such as age, gender, 
+                type of institution, or financial conditions influence the ability of students to adapt effectively to online learning. 
+                These predictions can help educators, institutions, and policymakers improve pedagogical strategies and 
+                infrastructures to maximize the effectiveness of distance education.
+            </p>
+        </section>
+    
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>
+                With the rise in popularity of online education, especially after the global pandemic, it becomes crucial to measure 
+                the effectiveness of this mode of learning. This project exploits a dataset including several characteristics influencing 
+                the level of adaptability of students, such as access to the Internet, the duration of online courses, or the type of 
+                device used. Through the analysis of these data and the application of machine learning models, this project seeks 
+                to identify the key factors that promote or hinder student adaptability in a virtual setting. The results obtained could 
+                provide useful information for designing more inclusive online educational systems that are adapted to the needs of students.
+            </p>
+        </section>
+        {% endblock %}
+    </div>
+</body>
+</html>

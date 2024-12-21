@@ -1,0 +1,37 @@
+{% extends "nav.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Models</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Model Comparison</h1>
+        <table class="table table-bordered table-striped mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>Model Name</th>
+                    <th>Accuracy Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for model_name, accuracy in results.items() %}
+                <tr>
+                    <td>{{ model_name }}</td>
+                    <td>{{ accuracy | round(2) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('train_model') }}" class="btn btn-primary">Back to Train Model</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
